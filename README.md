@@ -1,28 +1,25 @@
-# YAGT - Yet another Git talk
+# BitcoinJ -- DevFest 2012 / Vienna, Austria
 
 This is a fork of [reveal.js](https://github.com/hakimel/reveal.js)
-with the goal to build a talk about [Git](http://www.git-scm.org/)
+and [YAGT](https://github.com/haraldschilly/yagt)
+with the goal to build a talk about [BicoinJ](http://code.google.com/p/bitcoinj/)
 and hence explaining it.
 
 <h1>
-<a href="http://haraldschilly.github.com/yagt">READ TALK ONLINE HERE</a>
+<a href="http://bitcoinaustria.github.com/devfest-bitcoinj">READ TALK ONLINE HERE</a>
 </h1>
 
 # Authors
 
 The actual content of this talk was mainly written by
 
-Harald Schilly <harald@schil.ly>
+* Andreas Petersson <andreas@petersson.at>
 
-With contributions by
-
-* Helmuth Breitenfellner <helmuth@breitenfellner.at>
+* Harald Schilly <harald@schil.ly>
 
 # Copyright
 
-* Images are based on CC BY-NC-SA from [Visual Git Guide](http://marklodato.github.com/visual-git-guide/index-en.html)
-
-* Apart from that, it's a derived work from reveal.js and my changes fit into the same license.
+* Apart from that, it's a derived work from YAGT and reveal.js and my changes fit into the same license.
 
 * Text content and images originally produced by me are CC BY-SA.
 
