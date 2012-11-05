@@ -1,11 +1,11 @@
 {
-	"author": "Harald Schilly",
-	"name": "YAGT",
-	"description": "YAGT: Yet another Git talk",
+	"author": "Andreas Petersson, Harald Schilly",
+	"name": "bitcoinj at the devfest 2012 austria",
+	"description": "BitcoinJ",
 	"version": "1",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/haraldschilly/yagt.git"
+		"url": "git://github.com/bitcoinaustria/devfest-bitcoinj.git"
 	},
 	"engines": {
 		"node": "~0.8.0"
