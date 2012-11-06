@@ -131,7 +131,7 @@ var Reveal = (function(){
     dom.title_orig   = document.title;
     dom.breadcrumb   = document.querySelector('#breadcrumb');
     dom.footnote     = document.querySelector("#footnote");
-    dom.time = document.querySelector("#time");
+    dom.time         = document.querySelector("#time");
 
 		if ( config.controls ) {
 			dom.controls = document.querySelector( '.reveal .controls' );

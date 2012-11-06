@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
   <link rel="stylesheet" href="css/reveal.css">
-  <link rel="stylesheet" href="css/theme/yagt.css" id="theme">
+  <link rel="stylesheet" href="css/theme/bitcoinj.css" id="theme">
 
   <!-- For syntax highlighting -->
   <link rel="stylesheet" href="lib/css/github.css">
@@ -187,8 +187,13 @@ and <a href="http://petersson.at/">Andreas Petersson</a></h2>
    <!-- time -->
    <aside id="time"></aside>
 
-   <!-- breadcrumb at the top -->
-   <aside id="breadcrumb"></aside>
+   <!--header-->
+   <aside id="header">
+     <!-- breadcrumb at the top -->
+     <aside id="breadcrumb"></aside>
+     <!--ticker-->
+     <aside id="ticker"></aside>
+  </aside>
 
    <!-- footnote in bottom middle. enter text via <aside class="footnote">...</aside>
         inside <section> -->
@@ -222,6 +227,7 @@ and <a href="http://petersson.at/">Andreas Petersson</a></h2>
      { src: 'lib/js/data-markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
      { src: '/socket.io/socket.io.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
      { src: 'plugin/speakernotes/client.js', async: true, condition: function() { return window.location.host === 'localhost:1947'; } },
+     { src: 'plugin/ticker.js', async: true },
     ]
    });
 
