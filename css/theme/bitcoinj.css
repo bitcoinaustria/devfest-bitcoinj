@@ -24,7 +24,6 @@ font-family: 'Signika';
 font-style: normal;
 font-weight: 600;
 src: local('Signika-Semibold'), url(res/signika/Signika-Semibold.ttf) format('ttf');
-
 }
 @font-face {
 font-family: 'Signika';
@@ -47,12 +46,12 @@ body {
 
  	background: white;
 
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 75%, rgba(235,97,31,.5) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%,rgba(255,255,255,0)), color-stop(100%,rgba(235,97,31,.5))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(235,97,31,.5) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(235,97,31,.5) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(235,97,31,.5) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 75%,rgba(235,97,31,.5) 100%); /* W3C */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 75%, rgba(84,84,84,.5) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(75%,rgba(255,255,255,0)), color-stop(100%,rgba(84,84,84,.5))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(84,84,84,.5) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(84,84,84,.5) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(255,255,255,0) 75%,rgba(84,84,84,.5) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 75%,rgba(84,84,84,.5) 100%); /* W3C */
 }
 
 ::-moz-selection {
@@ -188,16 +187,17 @@ hr {
 	text-decoration: none;
   font-weight: 600;
 
-	-webkit-transition: color .15s ease;
-	   -moz-transition: color .15s ease;
-	    -ms-transition: color .15s ease;
-	     -o-transition: color .15s ease;
-	        transition: color .15s ease;
+	-webkit-transition: background .15s ease;
+	   -moz-transition: background .15s ease;
+	    -ms-transition: background .15s ease;
+	     -o-transition: background .15s ease;
+	        transition: background .15s ease;
 }
 	.reveal a:not(.image):hover {
 		text-shadow: none;
 		border: none;
 		border-radius: 2px;
+    background: #dbdbdb;
 	}
 
 .reveal .roll span:after {
