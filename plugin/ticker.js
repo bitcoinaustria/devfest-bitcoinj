@@ -2,18 +2,20 @@
 
 (function () {
   var ticker = document.querySelector("#ticker");
-  var usd_cur = -1;
-  var usd_last = -1;
+  var usd_cur = null;
+  var usd_last = null;
   var usd = "...";
-  var trd = "...";
+  var trade = "...";
+  var avg = null; /* EMA, updated for each trade */
+  var trend = "";
 
   function show() {
     var diff = "";
-    if (usd_last != -1) {
+    if (usd_last != null) {
       var d = usd_last - usd_cur;
-      diff = " " + ((d >= 0) ? "+" : "-") + d.toFixed(3);
+      diff = " " + ((d >= 0) ? "+" : "") + d.toFixed(3);
     }
-    ticker.innerHTML = "<b>1Ƀ = " + usd + "</b>" + diff + "@" + trd;
+    ticker.innerHTML = "1Ƀ = " + usd + " " + diff + "@" + trade + trend;
   }
 
   var conn = io.connect('https://socketio.mtgox.com/mtgox');
@@ -34,13 +36,15 @@
       }
     } else if (data["channel"] == "dbf1dee9-4f2e-4a08-8cb7-748919a71b21") {
       if (data["op"] == "private") {
-        console.log(data);
         var trade = data["trade"];
         if (trade["price_currency"] == "USD") {
-          var sym = (trade["trade_type"] == "bid") ? "&#8599;" : "&#8600;";
-          var vol = "" + trade["amount"].toFixed(3);
-          trd = vol + " " + sym;
+          var trade = "" + trade["amount"].toFixed(3);
+          if (avg == null) { avg = usd_cur; }
+          trend = " " + (usd_cur > avg) ? "&#8599;" : 
+                       ((usd_cur < avg) ? "&#8600;" : "&rarr;");
           show();
+          avg = avg + 0.9 * ( usd_cur - avg );
+          console.log("avg: " + avg + " cur: " + usd_cur);
         }
       }
     }
@@ -50,6 +54,11 @@
     ticker.innerHTML = "disconnected";
   });
 
-  ticker.innerHTML = "connecting ...";
+  conn.on("error", function(data) {
+    ticker.innerHTML = "error";
+    console.log("ticker error: " + data);
+  });
+
+  ticker.innerHTML = "...";
 
 }());
