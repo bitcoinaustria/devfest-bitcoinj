@@ -3,7 +3,7 @@
  <head><meta charset="utf-8">
   <title>BitcoinJ</title>
 
-  <meta name="description" content="BitcoinJ: DevFest 2012 Vienna, Austria Talk">
+  <meta name="description" content="BitcoinJ: DevFest 2012 Vienna, Austria Talk; Bitcoin client for Java and Android">
   <meta name="author" content="Andreas Petersson, Harald Schilly">
 
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -47,7 +47,7 @@
 <section bc="">
 <section>
 <h1>BitcoinJ</h1>
-<h2>Bitcoin in JAVA and Android</h2>
+<h2>Bitcoin for JAVA and Android</h2>
 <hr/>
 <h2>by <a href="http://harald.schil.ly">Harald Schilly</a>
 and <a href="http://petersson.at/">Andreas Petersson</a></h2>
@@ -117,10 +117,61 @@ and <a href="http://petersson.at/">Andreas Petersson</a></h2>
 <section data-markdown>
 ## API
 
-<aside class="footnote">
-
-</aside>
+<aside class="footnote"> </aside>
 </section>
+
+<section>
+<h2>Wallet</h2>
+<pre><code class="java">File walletFile = new File("coins.dat");
+try {
+    wallet = Wallet.loadFromFile(walletFile);
+} catch (IOException e) {
+    wallet = new Wallet(params);
+    wallet.addKey(new ECKey());
+    wallet.saveToFile(walletFile);
+}
+</code></pre>
+</section>
+
+<section>
+<h2>Public/Private Key</h2>
+<pre><code class="java">ECKey key = wallet.keychain.get(0);
+byte[] publicKey = key.getPubKey();
+</code></pre>
+Gets the address corresponding to the public key.
+<pre><code class="java">Address addr = key.toAddress(networkParams);
+System.out.println(addr.toString());
+</code></pre>
+1HwBZk111V4eEEC4BcN8fZd3RVifig2WjY
+</section>
+
+<section>
+<h2>Connect to Network</h2>
+<pre><code class="java">final PeerGroup peerGroup = 
+    new PeerGroup(blockStore, params, chain);
+peerGroup.setUserAgent("MyApp", "1.2");
+peerGroup.addWallet(wallet);
+peerGroup.addAddress(
+    new PeerAddress(InetAddress.getLocalHost()));
+peerGroup.start();
+</code></pre>
+</section>
+
+<section>
+<h2>Payment Notification</h2>
+<pre><code class="java">wallet.addEventListener(
+  new AbstractWalletEventListener() {
+   public void onCoinsReceived(
+        Wallet w,
+        Transaction tx,
+        BigInteger prevBalance,
+        BigInteger newBalance) {
+           // Running on a peer thread.
+   }
+});
+</code></pre>
+</section>
+
 </section>
 
 <section bc="Final Words">
