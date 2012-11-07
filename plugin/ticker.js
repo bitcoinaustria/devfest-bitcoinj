@@ -30,7 +30,6 @@
         usd = last["display"];
         usd_cur = parseFloat(last["value"]);
         show();
-        usd_last = usd_cur;
       } else if (data["op"] == "subscribe") {
         /* ticker.innerHTML = "connected"; */
       }
@@ -40,14 +39,15 @@
         if (trade["price_currency"] == "USD") {
           trd = "" + trade["amount"].toFixed(3);
           if (avg == null) { avg = usd_cur; }
-          if (usd_cur > avg)
+          if (usd_cur > avg + .0005)
              trend = "&#8599;";
-          else if (usd_cur < avg)
+          else if (usd_cur < avg - .0005)
              trend = "&#8600;";
           else
              trend = "&rarr;";
           show();
           avg = avg + 0.9 * ( usd_cur - avg );
+          usd_last = usd_cur;
           /* console.log("avg: " + avg + " cur: " + usd_cur); */
         }
       }
