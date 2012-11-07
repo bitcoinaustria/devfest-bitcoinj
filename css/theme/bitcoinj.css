@@ -307,14 +307,15 @@ hr {
 }
 
 .reveal #header {
+  font-size: .45em;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   margin: 0;
   padding: 0;
-  background: rgba(235, 97, 31, .3);
-  height: .55em;
+  background: rgba(235, 97, 31, .2);
+  height: 1.4em;
 }
 
 .reveal #breadcrumb, .reveal #ticker {
@@ -322,7 +323,6 @@ hr {
   top: .3em;
   left: .3em;
   z-index: 20;
-  font-size: .4em;
   color: rgba(0,0,0,.8);
   letter-spacing: 0;
 }

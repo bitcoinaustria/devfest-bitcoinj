@@ -5,7 +5,7 @@
   var usd_cur = null;
   var usd_last = null;
   var usd = "...";
-  var trade = "...";
+  var trd = "...";
   var avg = null; /* EMA, updated for each trade */
   var trend = "";
 
@@ -15,7 +15,7 @@
       var d = usd_last - usd_cur;
       diff = " " + ((d >= 0) ? "+" : "") + d.toFixed(3);
     }
-    ticker.innerHTML = "1Ƀ = " + usd + " " + diff + "@" + trade + trend;
+    ticker.innerHTML = "1Ƀ = " + usd + " " + diff + "@" + trd + " " + trend;
   }
 
   var conn = io.connect('https://socketio.mtgox.com/mtgox');
@@ -38,13 +38,17 @@
       if (data["op"] == "private") {
         var trade = data["trade"];
         if (trade["price_currency"] == "USD") {
-          var trade = "" + trade["amount"].toFixed(3);
+          trd = "" + trade["amount"].toFixed(3);
           if (avg == null) { avg = usd_cur; }
-          trend = " " + (usd_cur > avg) ? "&#8599;" : 
-                       ((usd_cur < avg) ? "&#8600;" : "&rarr;");
+          if (usd_cur > avg)
+             trend = "&#8599;";
+          else if (usd_cur < avg)
+             trend = "&#8600;";
+          else
+             trend = "&rarr;";
           show();
           avg = avg + 0.9 * ( usd_cur - avg );
-          console.log("avg: " + avg + " cur: " + usd_cur);
+          /* console.log("avg: " + avg + " cur: " + usd_cur); */
         }
       }
     }
