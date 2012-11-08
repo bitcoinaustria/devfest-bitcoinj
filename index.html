@@ -103,7 +103,7 @@ You can also rely on a third-party service:
 * First Rev: March 4th, 2011
 * Main Devs: [Mike Hearn](https://plus.google.com/u/0/114798402540078632611), [Miron Cuperman](http://hyper.to/blog/), [Matt Corallo](https://github.com/TheBlueMatt)
 * Apache 2.0 Licensed
-* Still actively developed
+* Still actively developed; alpha stage
 
 <div style="font-size: 140%">&Rarr; <a href="http://bitcoinj.org">BitcoinJ Website</a> &Larr;</div>
 <aside class="footnote">
@@ -112,9 +112,10 @@ You can also rely on a third-party service:
 <section data-markdown>
 ## Goals
 
-* Full Java implementation of the Bitcoin protocol
+* Java implementation of the Bitcoin protocol
 * Lightweight client for the Android ecosystem
 * Simple library for desktop applications
+* Suiteable for server-side processing
 
 </section>
 <section data-markdown>
@@ -135,12 +136,18 @@ You can also rely on a third-party service:
 
 </section>
 <section data-markdown>
+## Security
 
+BitcoinJ relies on the network to verify transactions.
+
+Only valid transactions are propagated and BitcoinJ
+checks if it receives its own transactions.
 
 </section>
 <section data-markdown data-state="alert">
 ## BitcoinJ is not ...
 
+* a full Bitcoin node
 
 </section>
 </section>
