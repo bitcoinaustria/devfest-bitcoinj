@@ -143,6 +143,10 @@ pre.small {
 .reveal li {
   margin: .1em auto;
 }
+
+.reveal table th, .reveal table td {
+  vertical-align: top;
+}
 /*********************************************
  * HEADERS
  *********************************************/
