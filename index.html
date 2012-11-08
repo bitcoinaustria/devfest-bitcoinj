@@ -172,38 +172,67 @@ peerGroup.start();
 </code></pre>
 </section>
 
+<section>
+<h2>Introspect Payment</h2>
+<pre><code class="java">// Wallet w, Transaction tx;
+TransactionInput input = tx.getInputs().get(0);
+Address from = input.getFromAddress();
+BigInteger value = tx.getValueSentToMe(w);
+println(Utils.bitcoinValueToFriendlyString(value));
+</code></pre>
+</section>
+
+<section>
+<h2>Send a Payment</h2>
+<pre><code class="java">
+// Address to; Wallet w
+Wallet.SendResult sendResult = 
+    w.sendCoins(peerGroup, to, value);
+println("Sent coins! TX=" + 
+    sendResult.tx.getHashAsString());
+</code></pre>
+</section>
+
 </section>
 
 <section bc="Final Words">
-     <section bc="Links">
-     <table style="table-layout: fixed; width:100%;">
+ <section bc="Links">
+     <table style="width:100%;">
        <tr>
-         <td style="width: 50%">
+         <td>
            <h2>Talk</h2>
+           </td><td>
            <ul>
-             <li><a href="http://github.com/haraldschilly/yagt">Source of this</a></li>
-             <li><a href="http://harald.schil.ly/">My Website</a></li>
-           </ul>
-           </td><td style="width: 50%">
-           <h2>Git</h2>
-           <ul>
-             <li><a href="http://www.git-scm.com/">Git</a></li>
-             <li><a href="http://git-scm.com/book">Git Book</a></li>
-           </ul>
-         </tr>
-         <tr>
-           <td colspan="2" style="width:100%">
-             <h2>Resources</h2>
-             <ul>
-               <li><a href="http://gitready.com/">Git Ready</a></li>
-               <li><a href="ftp://ftp.newartisans.com/pub/git.from.bottom.up.pdf">Git from the bottom up</a></li>
-               <li><a href="http://marklodato.github.com/visual-git-guide/">Visual Git Guide</a></li>
-             </ul>
+             <li><a href="http://github.com/bitcoinaustria/devfest-bitcoinj">Sources for this talk</a></li>
+             <li><b><a href="http://www.bitcoin-austria.at/">Bitcoin Austria Organization</a></b></li>
            </ul>
          </td>
        </tr>
-     </table>
-     </section>
+       <tr>
+         <td>
+           <h2>Bitcoin</h2>
+           </td><td>
+           <ul>
+             <li><a href="http://www.bitcoin.org/">Bitcoin</a></li>
+             <li><a href="http://weusecoins.org">we use coins</a></li>
+<li><a href="http://en.wikipedia.org/wiki/Bitcoin">Bitcoin @ Wikipedia</a></li>
+           </ul>
+         </td>
+       </tr>
+       <tr>
+         <td>
+           <h2>BitcoinJ</h2>
+           </td><td>
+           <ul>
+             <li><b><a href="http://code.google.com/p/bitcoinj/">BitcoinJ</a></b></li>
+             <li><a href="http://www.javaworld.com/javaworld/jw-01-2012/120110-bitcoin-for-beginners-3.html">Java World Article</a></li>
+<li><a href="http://code.google.com/p/bitcoin-wallet/">Bitcoin Wallet 4 Android</a></li>
+           </ul>
+         </ul>
+       </td>
+     </tr>
+   </table>
+ </section>
 
      <section bc="Copyright">
      <h2><b>&copy; 2012 <a href="http://harald.schil.ly/">Harald Schilly</a> &amp;
