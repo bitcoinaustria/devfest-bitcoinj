@@ -39,9 +39,9 @@
         if (trade["price_currency"] == "USD") {
           trd = "" + trade["amount"].toFixed(3);
           if (avg == null) { avg = usd_cur; }
-          if (usd_cur > avg + .0005)
+          if (usd_cur > avg + .001)
              trend = "&#8599;";
-          else if (usd_cur < avg - .0005)
+          else if (usd_cur < avg - .001)
              trend = "&#8600;";
           else
              trend = "&rarr;";
