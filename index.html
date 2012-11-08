@@ -62,12 +62,42 @@
 </section>
 
 <section data-markdown bc="Introduction">
-  <section data-markdown>
-    # What's Bitcoin?
+<section data-markdown>
+## What's Bitcoin?
+
+<blockquote cite="http://bitcoin.org/">Bitcoin is an experimental new digital currency 
+that enables instant payments to anyone, anywhere in the world. 
+Bitcoin uses peer-to-peer technology to operate with no central authority:<br/>
+managing transactions and issuing money are carried out collectively by the network.</blockquote>
+<div style="text-align: right">-- bitcoin.org</div>
+
+<aside class="footnote"><a href="http://bitcoin.org">bitcoin.org</a></aside>
+</section>
+
+<section data-markdown>
+## In Short
+
+* <div style="color: red">You are you own bank!</div>
+* Money is stored in <b>your</b> machine.
+* worldwide
+* instant
+* <b>... and chargebacks are impossible!</b>
 
 </section>
+
 <section data-markdown>
-## Project
+## Scared?
+
+You can also rely on a third-party service:
+
+* [blockchain.info](https://blockchain.info/api): secure online wallet with an API
+* [BitPay](https://bitpay.com/): full blown mechant solution
+* [Paysius](http://paysius.com/): US only :(
+* [WalletBit](https://walletbit.com/businesstools): POS solutions
+</section>
+
+<section data-markdown>
+## BitcoinJ Project
 
 * Started as a 20% project at Google
 * First Rev: March 4th, 2011
@@ -97,11 +127,19 @@
 </ul>
 </section>
 <section data-markdown>
+## Ingredients
+
+* Public/Private Key in Wallet
+* Connection to Peers
+* Storage of past transactions (if necessary)
+
+</section>
+<section data-markdown>
+
 
 </section>
 <section data-markdown data-state="alert">
 ## BitcoinJ is not ...
-
 
 
 </section>
@@ -109,15 +147,12 @@
 
 <section bc="API">
 <section data-markdown>
-## Getting Started
+## The API
+
+<h1 style="color: red">Show us the code!</h1>
 
 <aside class="footnote">
 <a href="http://code.google.com/p/bitcoinj/wiki/GettingStarted">BitcoinJ Wiki: Getting Started</a>
-</section>
-<section data-markdown>
-## API
-
-<aside class="footnote"> </aside>
 </section>
 
 <section>
@@ -180,17 +215,18 @@ Address from = input.getFromAddress();
 BigInteger value = tx.getValueSentToMe(w);
 println(Utils.bitcoinValueToFriendlyString(value));
 </code></pre>
+Note: For each payment request, generate a new address.
 </section>
 
 <section>
 <h2>Send a Payment</h2>
-<pre><code class="java">
-// Address to; Wallet w
+<pre><code class="java">// Address to; Wallet w
 Wallet.SendResult sendResult = 
     w.sendCoins(peerGroup, to, value);
 println("Sent coins! TX=" + 
     sendResult.tx.getHashAsString());
 </code></pre>
+Note: sendResult could be <code>null</code>.
 </section>
 
 </section>
