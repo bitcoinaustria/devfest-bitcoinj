@@ -74,10 +74,10 @@ body {
 }
 
 .reveal blockquote {
-  background:rgba(0, 0, 0, 0.2);
+  background: #dbdbdb;
 }
 .reveal code, .reveal pre {
-  background: rgba(0,0,0,0.15);
+  background: #dbdbdb;
   box-shadow: 0px 0px 6px rgba(0,0,0,0.15);
   border: 1px solid transparent;
   padding-left: .2em;
