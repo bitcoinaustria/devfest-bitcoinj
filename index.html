@@ -42,255 +42,314 @@
         [html <title>] > [ hsection.bc ] > [ vsection.bc || vsection.h1,h2,h3]
    -->
 
-   <!-- Any section element inside of this container is displayed as a slide -->
+<!-- Any section element inside of this container is displayed as a slide -->
 <div class="slides">
 <section bc="">
-<section>
-<h1>BitcoinJ</h1>
-<h3>JAVA / Android Library</h3>
-<hr/>
-<h3><a href="http://petersson.at/">Andreas Petersson</a> &amp; <br/>
-<a href="http://harald.schil.ly">Harald Schilly</a></h3>
-<p><img class="noborder" src='res/Bitcoin-austria.svg' width="35%" /></p>
+    <section>
+        <h1>BitcoinJ</h1>
+        <h3>JAVA / Android Library</h3>
+        <hr/>
+        <h3><a href="http://petersson.at/">Andreas Petersson</a> &amp; <br/>
+            <a href="http://harald.schil.ly">Harald Schilly</a></h3>
+        <p><img class="noborder" src='res/Bitcoin-austria.svg' width="35%"/></p>
 
-<aside class="footnote">
-<a href="http://bitcoinaustria.github.com/devfest-bitcoinj/">bitcoinaustria.github.com/devfest-bitcoinj</a>
--
-<a href="https://github.com/bitcoinaustria/devfest-bitcoinj">devfest-bitcoinj@github</a>
-</aside>
-</section>
+        <aside class="footnote">
+            <a href="http://bitcoinaustria.github.com/devfest-bitcoinj/">bitcoinaustria.github.com/devfest-bitcoinj</a>
+            -
+            <a href="https://github.com/bitcoinaustria/devfest-bitcoinj">devfest-bitcoinj@github</a>
+        </aside>
+    </section>
 </section>
 
 <section data-markdown bc="Introduction">
-<section data-markdown>
-## What's Bitcoin?
+    <section data-markdown>
+        ## What's Bitcoin?
 
-<blockquote cite="http://bitcoin.org/">Bitcoin is an experimental new digital currency 
-that enables instant payments to anyone, anywhere in the world. 
-Bitcoin uses peer-to-peer technology to operate with no central authority:<br/>
-managing transactions and issuing money are carried out collectively by the network.</blockquote>
-<div style="text-align: right">-- bitcoin.org</div>
+        <blockquote cite="http://bitcoin.org/">Bitcoin is an experimental new digital currency
+            that enables instant payments to anyone, anywhere in the world.
+            Bitcoin uses peer-to-peer technology to operate with no central authority:<br/>
+            managing transactions and issuing money are carried out collectively by the network.
+        </blockquote>
+        <div style="text-align: right">-- bitcoin.org</div>
 
-<aside class="footnote"><a href="http://bitcoin.org">bitcoin.org</a></aside>
-</section>
+        <aside class="footnote"><a href="http://bitcoin.org">bitcoin.org</a></aside>
+    </section>
 
-<section data-markdown>
-## In Short
+    <section data-markdown>
+        ## In Short
 
-* <div style="color: red">You are you own bank!</div>
-* Money is stored in <b>your</b> machine.
-* worldwide
-* instant
-* <b>... and chargebacks are impossible!</b>
+        *
+        <div style="color: red">You are you own bank!</div>
+        * Money is stored in <b>your</b> machine.
+        * worldwide
+        * instant
+        * <b>... and chargebacks are impossible!</b>
 
-</section>
+    </section>
 
-<section data-markdown>
-## Scared?
+    <section data-markdown>
+        ## How is it different?
 
-You can also rely on a third-party service:
+        * No middleman
+        * No contract
+        * No TOS to care about.
 
-* [blockchain.info](https://blockchain.info/api): secure online wallet with an API
-* [BitPay](https://bitpay.com/): full blown mechant solution
-* [Paysius](http://paysius.com/): US only :(
-* [WalletBit](https://walletbit.com/businesstools): POS solutions
-</section>
+    </section>
 
-<section data-markdown>
-## BitcoinJ Project
 
-* Started as a 20% project at Google
-* First Rev: March 4th, 2011
-* Main Devs: [Mike Hearn](https://plus.google.com/u/0/114798402540078632611), [Miron Cuperman](http://hyper.to/blog/), [Matt Corallo](https://github.com/TheBlueMatt)
-* Apache 2.0 Licensed
-* Still actively developed; alpha stage
 
-<div style="font-size: 140%">&Rarr; <a href="http://bitcoinj.org">BitcoinJ Website</a> &Larr;</div>
-<aside class="footnote">
-</aside>
-</section>
-<section data-markdown>
-## Goals
+    <section data-markdown>
+        ## Scared?
 
-* Java implementation of the Bitcoin protocol
-* Lightweight client for the Android ecosystem
-* Simple library for desktop applications
-* Suiteable for server-side processing
+        You can also rely on a third-party service:
 
-</section>
-<section data-markdown>
-## Main Features
+        * [blockchain.info](https://blockchain.info/api): secure online wallet with an API
+        * [BitPay](https://bitpay.com/): full blown mechant solution
+        * [Paysius](http://paysius.com/): US only :(
+        * [WalletBit](https://walletbit.com/businesstools): POS solutions
+    </section>
 
-<ul>
-  <li class="fragment">Manage a local Bitcoin wallet (no server!)</li>
-  <li class="fragment">Connect and listen to other Bitcoin nodes directly</li>
-  <li class="fragment">Send/recieve Bitcoins w/o storing the full blockchain (simplified payment verification)</li>
-</ul>
-</section>
-<section data-markdown>
-## Ingredients
+    <section data-markdown>
+        ## Types of clients
 
-* Public/Private Key in Wallet
-* Connection to Peers
-* Storage of past transactions (if necessary)
+        * Classic "Satoshi" client
+        * BitcoinJ
+        * Forks / Alternative Implementations
+    </section>
 
-</section>
-<section data-markdown>
-## Security
+    <section data-markdown>
+        ## Resource Comparison
 
-BitcoinJ relies on the network to verify transactions.
+        <ul>
+            <li class="fragment">bitcoinJ on Android: 5MB</li>
+            <li class="fragment"> Multibit: 21MB   </li>
+            <li class="fragment"> Satoshi client: 4800MB    </li>
+        </ul>
+    </section>
 
-Only valid transactions are propagated and BitcoinJ
-checks if it receives its own transactions.
+    <section data-markdown>
+        ## Projects using BitcoinJ
 
-</section>
-<section data-markdown data-state="alert">
-## BitcoinJ is not ...
+        * Bitcoin Wallet for Android
+        * Multibit
+        * Satoshidice
+        * Tons of lesser known applications
+    </section>
 
-* a full Bitcoin node
 
-</section>
+    <section data-markdown>
+        ## BitcoinJ Project
+
+        * Started as a 20% project at Google
+        * First Rev: March 4th, 2011
+        * Main Devs: [Mike Hearn](https://plus.google.com/u/0/114798402540078632611), [Miron Cuperman](http://hyper.to/blog/), [Matt Corallo](https://github.com/TheBlueMatt)
+        * Apache 2.0 Licensed
+        * Still actively developed; alpha stage
+
+        <div style="font-size: 140%">&Rarr; <a href="http://bitcoinj.org">BitcoinJ Website</a> &Larr;</div>
+        <aside class="footnote">
+        </aside>
+    </section>
+    <section data-markdown>
+        ## Goals
+
+        * Java implementation of the Bitcoin protocol
+        * Lightweight client for the Android ecosystem
+        * Simple library for desktop applications
+        * Suiteable for server-side processing
+
+    </section>
+    <section data-markdown>
+        ## Main Features
+
+        <ul>
+            <li class="fragment">Manage a local Bitcoin wallet (no server!)</li>
+            <li class="fragment">Connect and listen to other Bitcoin nodes directly</li>
+            <li class="fragment">Send/recieve Bitcoins w/o storing the full blockchain (simplified payment
+                verification)
+            </li>
+        </ul>
+    </section>
+    <section data-markdown>
+        ## Ingredients
+
+        * Public/Private Key in Wallet
+        * Connection to Peers
+        * Storage of past transactions (if necessary)
+    </section>
+    <section data-markdown>
+        ## Security
+
+        BitcoinJ relies on the network to verify transactions.
+
+        Only valid transactions are propagated and BitcoinJ
+        checks if it receives its own transactions.
+    </section>
+    <section data-markdown data-state="alert">
+        ## BitcoinJ is not ...
+
+        * a full Bitcoin node
+        * fire-and-forget
+        * 1.0 quality release
+
+    </section>
 </section>
 
 <section bc="API">
-<section data-markdown>
-## The API
+    <section data-markdown>
+        ## The API
 
-<h1 style="color: red">Show us the code!</h1>
+        <h1 style="color: red">Show us the code!</h1>
 
-<aside class="footnote">
-<a href="http://code.google.com/p/bitcoinj/wiki/GettingStarted">BitcoinJ Wiki: Getting Started</a>
-</section>
+        <aside class="footnote">
+            <a href="http://code.google.com/p/bitcoinj/wiki/GettingStarted">BitcoinJ Wiki: Getting Started</a>
+    </section>
 
-<section>
-<h2>Wallet</h2>
+    <section>
+        <h2>Wallet</h2>
 <pre><code class="java">File walletFile = new File("coins.dat");
-try {
+    try {
     wallet = Wallet.loadFromFile(walletFile);
-} catch (IOException e) {
+    } catch (IOException e) {
     wallet = new Wallet(params);
     wallet.addKey(new ECKey());
     wallet.saveToFile(walletFile);
-}
+    }
 </code></pre>
-</section>
+    </section>
 
-<section>
-<h2>Public/Private Key</h2>
-<pre><code class="java">ECKey key = wallet.keychain.get(0);
-byte[] publicKey = key.getPubKey();
+    <section>
+        <h2>Public/Private Key</h2>
+<pre><code class="java">ECKey key = new ECKey();
+    byte[] publicKey = key.getPubKey();
 </code></pre>
-Gets the address corresponding to the public key.
+        Gets the address corresponding to the public key.
 <pre><code class="java">Address addr = key.toAddress(networkParams);
-System.out.println(addr.toString());
+    System.out.println(addr.toString());
 </code></pre>
-1HwBZk111V4eEEC4BcN8fZd3RVifig2WjY
-</section>
+        1HwBZk111V4eEEC4BcN8fZd3RVifig2WjY
+    </section>
 
-<section>
-<h2>Connect to Network</h2>
-<pre><code class="java">final PeerGroup peerGroup = 
+    <section>
+        <h2>Connect to Network</h2>
+<pre><code class="java">final PeerGroup peerGroup =
     new PeerGroup(blockStore, params, chain);
-peerGroup.setUserAgent("MyApp", "1.2");
-peerGroup.addWallet(wallet);
-peerGroup.addAddress(
+    peerGroup.setUserAgent("MyApp", "1.2");
+    peerGroup.addWallet(wallet);
+    peerGroup.addAddress(
     new PeerAddress(InetAddress.getLocalHost()));
-peerGroup.start();
+    peerGroup.start();
 </code></pre>
-</section>
+    </section>
 
-<section>
-<h2>Payment Notification</h2>
+    <section>
+        <h2>Payment Notification</h2>
 <pre><code class="java">wallet.addEventListener(
-  new AbstractWalletEventListener() {
-   public void onCoinsReceived(
-        Wallet w,
-        Transaction tx,
-        BigInteger prevBalance,
-        BigInteger newBalance) {
-           // Running on a peer thread.
-   }
-});
+    new AbstractWalletEventListener() {
+    public void onCoinsReceived(
+    Wallet w,
+    Transaction tx,
+    BigInteger prevBalance,
+    BigInteger newBalance) {
+    // Running on a peer thread.
+    }
+    });
 </code></pre>
-</section>
+    </section>
 
-<section>
-<h2>Introspect Payment</h2>
+    <section>
+        <h2>Introspect Payment</h2>
 <pre><code class="java">// Wallet w, Transaction tx;
-TransactionInput input = tx.getInputs().get(0);
-Address from = input.getFromAddress();
-BigInteger value = tx.getValueSentToMe(w);
-println(Utils.bitcoinValueToFriendlyString(value));
+    TransactionInput input = tx.getInputs().get(0);
+    Address from = input.getFromAddress();
+    BigInteger value = tx.getValueSentToMe(w);
+    println(Utils.bitcoinValueToFriendlyString(value));
 </code></pre>
-Note: For each payment request, generate a new address.
-</section>
+        Note: For each payment request, generate a new address.
+    </section>
 
-<section>
-<h2>Send a Payment</h2>
+    <section>
+        <h2>Send a Payment</h2>
 <pre><code class="java">// Address to; Wallet w
-Wallet.SendResult sendResult = 
+    Wallet.SendResult sendResult =
     w.sendCoins(peerGroup, to, value);
-println("Sent coins! TX=" + 
+    println("Sent coins! TX=" +
     sendResult.tx.getHashAsString());
 </code></pre>
-Note: sendResult could be <code>null</code>.
-</section>
+        Note: sendResult could be <code>null</code>.
+    </section>
 
 </section>
+
 
 <section bc="Final Words">
- <section bc="Links">
-     <table style="width:100%;">
-       <tr>
-         <td>
-           <h2>Talk</h2>
-           </td><td>
-           <ul>
-             <li><a href="http://github.com/bitcoinaustria/devfest-bitcoinj">Sources for this talk</a></li>
-             <li><b><a href="http://www.bitcoin-austria.at/">Bitcoin Austria Organization</a></b></li>
-           </ul>
-         </td>
-       </tr>
-       <tr>
-         <td>
-           <h2>Bitcoin</h2>
-           </td><td>
-           <ul>
-             <li><a href="http://www.bitcoin.org/">Bitcoin</a></li>
-             <li><a href="http://weusecoins.org">we use coins</a></li>
-<li><a href="http://en.wikipedia.org/wiki/Bitcoin">Bitcoin @ Wikipedia</a></li>
-           </ul>
-         </td>
-       </tr>
-       <tr>
-         <td>
-           <h2>BitcoinJ</h2>
-           </td><td>
-           <ul>
-             <li><b><a href="http://code.google.com/p/bitcoinj/">BitcoinJ</a></b></li>
-             <li><a href="http://www.javaworld.com/javaworld/jw-01-2012/120110-bitcoin-for-beginners-3.html">Java World Article</a></li>
-<li><a href="http://code.google.com/p/bitcoin-wallet/">Bitcoin Wallet 4 Android</a></li>
-           </ul>
-         </ul>
-       </td>
-     </tr>
-   </table>
- </section>
 
-     <section bc="Copyright">
-     <h2><b>&copy; 2012 <a href="http://harald.schil.ly/">Harald Schilly</a> &amp;
+    <section data-markdown>
+        ## The Future of BitcoinJ
+
+        * Full verification capability
+        * Multisig support
+        * External hardware wallets
+        * Bloom filtering
+    </section>
+
+
+    <section bc="Links">
+        <table style="width:100%;">
+            <tr>
+                <td>
+                    <h2>Talk</h2>
+                </td>
+                <td>
+                    <ul>
+                        <li><a href="http://github.com/bitcoinaustria/devfest-bitcoinj">Sources for this talk</a></li>
+                        <li><b><a href="http://www.bitcoin-austria.at/">Bitcoin Austria Organization</a></b></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>Bitcoin</h2>
+                </td>
+                <td>
+                    <ul>
+                        <li><a href="http://www.bitcoin.org/">Bitcoin</a></li>
+                        <li><a href="http://weusecoins.org">we use coins</a></li>
+                        <li><a href="http://en.wikipedia.org/wiki/Bitcoin">Bitcoin @ Wikipedia</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h2>BitcoinJ</h2>
+                </td>
+                <td>
+                    <ul>
+                        <li><b><a href="http://code.google.com/p/bitcoinj/">BitcoinJ</a></b></li>
+                        <li><a href="http://www.javaworld.com/javaworld/jw-01-2012/120110-bitcoin-for-beginners-3.html">Java
+                            World Article</a></li>
+                        <li><a href="http://code.google.com/p/bitcoin-wallet/">Bitcoin Wallet 4 Android</a></li>
+                    </ul>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section bc="Copyright">
+        <h2><b>&copy; 2012 <a href="http://harald.schil.ly/">Harald Schilly</a> &amp;
             <a href="http://petersson.at">Andreas Petersson</a></b></h2>
-     <hr/>
-     <h3><a href="http://github.com/haraldschilly/yagt">devfest-bitcoinj@github</a></h3>
-     <h3>License: <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a></h3>
-     <p>Based on work by <a href="http://hakim.se">Hakim El Hattab</a><br/>
-     Details: <code>git blame</code> ;-)</p>
-     </section>
+        <hr/>
+        <h3><a href="http://github.com/haraldschilly/yagt">devfest-bitcoinj@github</a></h3>
+        <h3>License: <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a></h3>
+        <p>Based on work by <a href="http://hakim.se">Hakim El Hattab</a><br/>
+            Details: <code>git blame</code> ;-)</p>
+    </section>
 </section>
 </div>
 
    <!-- bottom left corner logo -->
-   <aside class="logo"> 
+   <aside class="logo">
      <a href="http://www.bitcoin-austria.at/"><img src="res/Bitcoin-austria.svg" /></a>
    </aside>
 
